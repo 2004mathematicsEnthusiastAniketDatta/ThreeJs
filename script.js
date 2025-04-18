@@ -1,4 +1,4 @@
-// import * as THREE from 'three';  -> for vite like bundler and reactjs or other libraries and frameworks
+// import * as THREE from 'three';  // Import the THREE.js library
 
 // const scene = new THREE.Scene(); -> Scene
 
@@ -72,3 +72,23 @@
 // cube.scale.set(0.1, 0.1, 0.1); // Set the scale of the cube to 0.1x0.1x0.1.
 // cube.scale.set(0.01, 0.01, 0.01); // Set the scale of the cube to 0.01x0.01x0.01.
 
+let scene = new THREE.Scene(); // Create a new scene
+let camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000); // Create a new perspective camera
+camera.position.z=5; // Set the camera position along the z-axis
+scene.add(camera); // Add the camera to the scene
+
+let box = new THREE.BoxGeometry(1, 1, 1); // Create a box geometry
+let material = new THREE.MeshBasicMaterial({ color: "red" }); // Create a basic material with green color
+let cube = new THREE.Mesh(box, material); // Create a mesh with the box geometry and material
+
+cube.rotation.y = Math.PI / 4; // Rotate the cube around the y-axis by 45 degrees 180degrees/4 PI= 180degree doration (radians unit)  
+scene.add(cube); // Add the cube to the scene
+cube.scale.set(2, 2, 2)
+
+const canvas = document.querySelector('#draw'); // Select the canvas element from the DOM
+const renderer = new THREE.WebGLRenderer({ canvas: canvas }); // Create a WebGL renderer with the selected canvas
+renderer.setSize(window.innerWidth, window.innerHeight); // Set the renderer size to match the window size
+// renderer.setPixelRatio(window.devicePixelRatio); // Set the pixel ratio to match the device's pixel ratio
+renderer.render(scene, camera); // Render the scene from the perspective of the camera
+
+//Animations

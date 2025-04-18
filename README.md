@@ -6,9 +6,22 @@ WebGL (Web Graphics Library) is a JavaScript API for rendering high-performance 
 
 1. 2. **What is Three.js?**  
 Three.js is a JavaScript library built on top of WebGL that simplifies the process of creating and displaying 3D graphics in the browser. It provides abstractions and utilities to make working with 3D scenes, objects, and animations more accessible. 
-2.  Making a cube as quick as ppossible and understanding every part
+2.  Making a cube as quick as ppossible and understanding every part:
+   i. scene
+   ii.camera
+   iii.renderer
+   - Important topics
+   iv.geometry  
+
 3. transformations
+     1. rotation
+     2. scale
+     3. setSize
+     4. setPixelRatio
+
 4. animations
+
+    
 5. setting up vite
 6. making responsive
 7. orbit
